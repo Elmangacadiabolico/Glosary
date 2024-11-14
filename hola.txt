@@ -1,0 +1,24 @@
+import { useState,useRef } from 'react'
+const [elementos, setElementos] = useState([]);
+const elemento = useRef(null);
+
+const agregarElementos = () =>{
+  setElementos([...elementos, Number(elemento.current.value)]);
+  elemento.current.value = "";
+  console.log(elementos)
+}
+
+function App() {
+ 
+
+  return (
+    <>
+      <h1>Hola pe weon</h1>
+      <h3> {elemento} </h3>
+      <input type="numbers" placeholder='Ingresar numeros' />
+      <button onClick={agregarElementos} > Confirmar </button>
+    </>
+  )
+}
+
+export default App
